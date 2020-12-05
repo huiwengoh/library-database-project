@@ -1,6 +1,14 @@
 <html>
 <body>
     <h4>Add a New Book to the Library</h4>
-    <h5>Please enter the following data to add a new book</h5>
+    <h5>Please enter the ISBN of the book:</h5>
+
+    <form action="newbook.php" method="post">
+
+	ISBN: <input type="number" name="isbn" required><br>
+	<input type="submit">
+
+	</form>
+
 </body>
 </html>
