@@ -17,7 +17,7 @@
 
 	// prepare and bind
 	$stmt_info = $conn->prepare("INSERT INTO book_info (ISBN, title, author, edition, year_published, publisher, genre, pages) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
-	$stmt_info->bind_param("issiissi", $ibsn, $title, $author, $edition, $year_published, $publisher, $genre, $pages);
+	$stmt_info->bind_param("issiissi", $isbn, $title, $author, $edition, $year_published, $publisher, $genre, $pages);
 
 	// set parameters and execute
 	$isbn = $_POST["isbn"];
