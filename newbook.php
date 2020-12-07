@@ -5,8 +5,11 @@
 	$host = 'localhost';
 	$dbname = 'library-database';
 	$username = 'root';
-	$password = '';
+//	$password = '';
+    $password = 'Password1';
 
+
+        
 	// Create connection
 	$conn = new mysqli($host, $username, $password, $dbname);
 
@@ -55,6 +58,10 @@
 	$conn->close();
 
 	?>
+
+<form action="index.php">
+    <input type="submit" value="Return Home" />
+    </form>
 
 </body>
 </html>

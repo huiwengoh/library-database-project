@@ -5,7 +5,8 @@
 	$host = 'localhost';
 	$dbname = 'library-database';
 	$username = 'root';
-	$password = '';
+//	$password = '';
+$password = 'password';
 
 	// Create connection
 	$conn = new mysqli($host, $username, $password, $dbname);
@@ -36,5 +37,9 @@
 	Your email address is: <?php echo $_POST["email"]; ?><br>
 	Your phone number is: <?php echo $_POST["phone"]; ?>
 
+
+    <form action="index.php">
+    <input type="submit" value="Return Home" />
+    </form>
 </body>
 </html>

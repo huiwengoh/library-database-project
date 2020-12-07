@@ -9,7 +9,7 @@ create table member
 );
 
 create table book_info
-(ISBN		int,
+(ISBN		bigint,
  title		varchar(30),
  author		varchar(20),
  edition		int,
@@ -22,7 +22,7 @@ create table book_info
 
 create table book_copy
 (bookID		int 	auto_increment,
- ISBN		int,
+ ISBN		bigint,
  primary key (bookID, ISBN),
  foreign key (ISBN) references book_info(ISBN)
  	on delete cascade
@@ -31,7 +31,7 @@ create table book_copy
 create table borrows
 (memberID	int,
  bookID		int,
- ISBN 		int,
+ ISBN 		bigint,
  borrow_date	date,
  primary key (memberID, bookID, ISBN),
  foreign key (memberID) references member(memberID),

@@ -2,13 +2,14 @@
 <body>
 
 	<?php
-	$host = 'localhost';
+	$host = "localhost";
 	$dbname = 'library-database';
 	$username = 'root';
-	$password = '';
+//	$password = '';
+$password = 'password';
 
 	// Create connection
-	$conn = new mysqli($host, $username, $password, $dbname);
+	$conn = new mysqli($host, $username, $password, $dbname, '3306');
 
 	// Check connection
 	if ($conn->connect_error) {
@@ -47,6 +48,10 @@
 	$conn->close();
 
 	?>
+
+<form action="index.php">
+    <input type="submit" value="Return Home" />
+    </form>
 
 </body>
 </html>

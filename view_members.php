@@ -6,7 +6,8 @@
 	$host = 'localhost';
 	$dbname = 'library-database';
 	$username = 'root';
-	$password = '';
+//	$password = '';
+$password = 'password';
 
 	// Create connection
 	$conn = new mysqli($host, $username, $password, $dbname);
