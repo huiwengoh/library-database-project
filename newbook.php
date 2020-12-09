@@ -5,8 +5,8 @@
 	$host = 'localhost';
 	$dbname = 'library-database';
 	$username = 'root';
-//	$password = '';
-    $password = 'Password1';
+	$password = '';
+    //$password = 'Password1';
 
 
         

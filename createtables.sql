@@ -2,7 +2,7 @@ create table member
 (memberID	int 	auto_increment,
  name		varchar(20),
  email		varchar(30),
- phone_num	int,
+ phone_num	bigint,
  borrow_limit	int,
  curr_borrow	int,
  primary key (memberID)
@@ -10,11 +10,11 @@ create table member
 
 create table book_info
 (ISBN		bigint,
- title		varchar(30),
- author		varchar(20),
+ title		varchar(40),
+ author		varchar(40),
  edition		int,
  year_published	int,
- publisher	varchar(20),
+ publisher	varchar(40),
  genre		varchar(20),
  pages		int,
  primary key (ISBN)
