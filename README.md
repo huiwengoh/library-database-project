@@ -34,8 +34,4 @@ The user will start off on the index page and should navigate to the selected pa
 - To add a book into the library, the librarian will need the ISBN, title, author, edition, publishing year, publisher,and number of pages.
 
 
-To lend a book, the librarian has to input the book ID and member ID, 
-
-
-which should be displayed on the inside jacket of the book.
 
