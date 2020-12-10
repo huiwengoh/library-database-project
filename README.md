@@ -11,3 +11,6 @@ In order to run the application, the files in this repository will need to be st
 The program will be running on https://localhost:80 by default on WAMP, or on the port that is being used for the Apache server.
 
 ## User Manual 
+
+index.php
+├──
