@@ -1,7 +1,7 @@
 <html>
 <head>
-        <link rel="stylesheet"  href="style.css"></link>
-    </head>
+    <link rel="stylesheet"  href="style.css"></link>
+</head>
 
 <body>
     <h4>Lending a book</h4>
@@ -61,7 +61,7 @@
 		$stmt->bind_param("iss", $insert_memberid, $insert_bookID, $insert_date);
 		$stmt->execute();
 		$stmt->close();
-		echo "The book with ISBN: " . $isbn . " has been successfully lent to member: " . $insert_memberid . "<br>";
+		echo "The book with ISBN: " . $isbn . " (bookID: " . $insert_bookID . ") has been successfully lent to member with ID: " . $insert_memberid . "<br>";
 	}
 
 	$conn->close();

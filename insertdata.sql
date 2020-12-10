@@ -41,3 +41,9 @@ insert into book_copy (ISBN) values('9780141187761');
 insert into book_copy (ISBN) values('9780141182704');
 insert into book_copy (ISBN) values('9780141182704');
 insert into book_copy (ISBN) values('9780141182704');
+
+insert into borrows (memberID, bookID, borrow_date) values (1, 1, '2020-12-10');
+insert into borrows (memberID, bookID, borrow_date) values (1, 10, '2020-12-10');
+insert into borrows (memberID, bookID, borrow_date) values (2, 5, '2020-12-10');
+insert into borrows (memberID, bookID, borrow_date) values (5, 12, '2020-12-10');
+insert into borrows (memberID, bookID, borrow_date) values (10, 8, '2020-12-10');
