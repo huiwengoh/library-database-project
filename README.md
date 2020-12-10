@@ -14,28 +14,17 @@ The program will be running on https://localhost:80 by default on WAMP, or on th
 
 ```
 library-database
-├── index.php
+└── index.php
     ├── lend_book.php
+    │   └──lend_book_results.php
     ├── return_book.php
+    │   └──return_book_results.php
     ├── add_member.php
+    │   └──newmember.php
     ├── add_book.php
+    │   └──newbook.php
+    │      └──newbookinfo.php
     ├── view_books.php
-    ├── view_members.php
+    └── view_members.php
 
-│   └── App
-│       ├── screens
-│       │   ├── Admin
-│       │   │   ├── screens
-│       │   │   │   ├── Reports
-│       │   │   │   │   └── index.js
-│       │   │   │   └── Users
-│       │   │   │       └── index.js
-│       │   │   └── index.js
-│       │   └── Course
-│       │       ├── screens
-│       │       │   └── Assignments
-│       │       │       └── index.js
-│       │       └── index.js
-│       └── index.js
-└── index.js
 ```
