@@ -12,10 +12,15 @@ The program will be running on https://localhost:80 by default on WAMP, or on th
 
 ## User Manual 
 
-'''
+```
 library-database
 ├── index.php
-    ├── screens
+    ├── lend_book.php
+    ├── return_book.php
+    ├── add_member.php
+    ├── add_book.php
+    ├── view_books.php
+    ├── view_members.php
 
 │   └── App
 │       ├── screens
@@ -33,4 +38,4 @@ library-database
 │       │       └── index.js
 │       └── index.js
 └── index.js
-'''
+```
