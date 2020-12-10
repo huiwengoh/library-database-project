@@ -5,7 +5,7 @@
     <?php
 	$host = 'localhost';
 	$dbname = 'library-database';
-$username = 'root';
+	$username = 'root';
 	$password = '';
     //$password = 'Password1';
 
@@ -32,6 +32,11 @@ $username = 'root';
 	$conn->close();
 
 	?>
+
+	<form action="index.php">
+    <input type="submit" value="Return Home" />
+    </form>
+
 
 </body>
 </html>

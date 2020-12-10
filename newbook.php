@@ -8,8 +8,6 @@
 	$password = '';
     //$password = 'Password1';
 
-
-        
 	// Create connection
 	$conn = new mysqli($host, $username, $password, $dbname);
 
@@ -29,7 +27,7 @@
 	  echo "ISBN: " . $row["ISBN"]. "<br>Title: " . $row["title"]. "<br> Author: " . $row["author"]. "<br> Year Published:" . $row["year_published"]. "<br> Publisher:" . $row["publisher"]. "<br> Genre:" . $row["genre"]. "<br> Pages:" . $row["pages"]."<br><br>";
 
 		$stmt = $conn->prepare("INSERT INTO book_copy (ISBN) VALUES (?)");
-		$stmt->bind_param('i', $isbn);
+		$stmt->bind_param('s', $isbn);
 
 		$isbn = $_POST["isbn"];
 		$stmt->execute();
@@ -43,7 +41,7 @@
 	?>
 		<form action="newbookinfo.php" method="post">
 
-		ISBN: <input type="number" name="isbn" value=<?php echo $_POST["isbn"];?> required><br>
+		ISBN: <input type="text" name="isbn" value=<?php echo $_POST["isbn"];?> required><br>
 		Title: <input type="text" name="title" required><br>
 		Author: <input type="text" name="author"><br>
 		Edition: <input type="number" name="edition"><br>

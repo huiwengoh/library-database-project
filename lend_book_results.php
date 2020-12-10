@@ -13,7 +13,6 @@
 	$username = 'root';
 	$password = '';
     
-
 	// Create connection
 	$conn = new mysqli($host, $username, $password, $dbname);
 
@@ -22,45 +21,43 @@
 	  die("Connection failed: " . $conn->connect_error);
 	}
 
-	//get all of the submitted data and store in variables
+	// get all of the submitted data and store in variables
 	$insert_date = $_POST["date"];
 	$isbn = $_POST["isbn"];
 	$insert_memberid = $_POST["memberid"];
 
-	//check how many versions of the book are in book_copy 
-	$versions = "SELECT COUNT(bookID) AS num FROM book_copy WHERE ISBN = '$isbn'"; 
-	$versionsquery = $conn->query($versions);
-	if($versionsquery){
-		$available = $versionsquery->fetch_assoc();
-		if($available["num"] == 0){
-			echo "There are no versions of that book in the library"; 
-		} else {
-			//check if book is borrowed inside of borrows by seeing if the isbn is in borrows the number of times there are copies
-			$borrowed = "SELECT count(bookID) AS num FROM borrows WHERE ISBN = '$isbn'";
-			$borrowedquery = $conn->query($borrowed);
-			$notavailable = $borrowedquery->fetch_assoc();
-			if ($available["num"] == $notavailable["num"]) {
-				echo "All copies of book with isbn = ". $isbn . " are being borrowed";
-			} else {
-				//if there is an available one, get the bookid of it 
-				$availablecopies = 'select * FROM book_copy WHERE bookID NOT IN (SELECT bookId FROM borrows) LIMIT 1';
-				$availablecopiesquery = $conn->query($availablecopies);
-				$theone = $availablecopiesquery->fetch_assoc();
-				$insert_bookID = $theone["bookID"];
-				$insert_ISBN = $theone["ISBN"];
-				//insert into borrows
-				$stmt = $conn->prepare("INSERT INTO borrows (memberID, bookId, ISBN, borrow_date) VALUES (?,?,?,?)");
-				$stmt->bind_param("iiii", $insert_memberid, $insert_bookID, $insert_ISBN, $insert_date);
-				$stmt->execute();
-				$stmt->close();
-				echo "The book has been successfully lent <br>";
-			}
+	// check if memberID is valid
+	$member = "SELECT COUNT(*) AS mem_count FROM member WHERE memberID = '$insert_memberid'";
+	$member_res = $conn->query($member);
+	$mem_count = $member_res->fetch_assoc();
+	if ($mem_count['mem_count'] == 0) {
+		echo $insert_memberid . " is not a valid memberID";
+		exit();
+	}
 
-		}
-	
+	// check if book exists in library
+	$book = "SELECT COUNT(*) AS book_count FROM book_info WHERE ISBN = '$isbn'";
+	$book_res = $conn->query($book);
+	$book_count = $book_res->fetch_assoc();
+	if ($book_count['book_count'] == 0) {
+		echo "The library does not have the book with ISBN: " . $isbn; 
+		exit();
+	}
 
+	// check if book has already been borrowed inside of borrows
+	$availablecopies = "SELECT bookID FROM book_copy WHERE ISBN = '$isbn' AND bookID NOT IN (SELECT bookID FROM borrows) LIMIT 1";
+	$availablecopiesquery = $conn->query($availablecopies);
+	if ($availablecopiesquery->num_rows == 0) {
+		echo "All copies of book with ISBN: ". $isbn . " are currently borrowed";
 	} else {
-		echo "That book is not available in the library <br>" ;
+		// if there is an available one, insert into borrows table
+		$theone = $availablecopiesquery->fetch_assoc();
+		$insert_bookID = $theone["bookID"];
+		$stmt = $conn->prepare("INSERT INTO borrows (memberID, bookId, borrow_date) VALUES (?,?,?)");
+		$stmt->bind_param("iss", $insert_memberid, $insert_bookID, $insert_date);
+		$stmt->execute();
+		$stmt->close();
+		echo "The book with ISBN: " . $isbn . " has been successfully lent by member: " . $insert_memberid . "<br>";
 	}
 
 	$conn->close();

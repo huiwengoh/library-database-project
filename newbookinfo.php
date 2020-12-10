@@ -4,7 +4,7 @@
 	<?php
 	$host = "localhost";
 	$dbname = 'library-database';
-$username = 'root';
+	$username = 'root';
 	$password = '';
     //$password = 'Password1';
 
@@ -18,7 +18,7 @@ $username = 'root';
 
 	// prepare and bind
 	$stmt_info = $conn->prepare("INSERT INTO book_info (ISBN, title, author, edition, year_published, publisher, genre, pages) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
-	$stmt_info->bind_param("issiissi", $isbn, $title, $author, $edition, $year_published, $publisher, $genre, $pages);
+	$stmt_info->bind_param("sssiissi", $isbn, $title, $author, $edition, $year_published, $publisher, $genre, $pages);
 
 	// set parameters and execute
 	$isbn = $_POST["isbn"];
@@ -51,7 +51,7 @@ $username = 'root';
 
 <form action="index.php">
     <input type="submit" value="Return Home" />
-    </form>
+</form>
 
 </body>
 </html>

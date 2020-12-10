@@ -18,7 +18,7 @@ $username = 'root';
 
 	// prepare and bind
 	$stmt = $conn->prepare("INSERT INTO member (name, email, phone_num) VALUES (?, ?, ?)");
-	$stmt->bind_param("ssi", $name, $email, $phonenum);
+	$stmt->bind_param("sss", $name, $email, $phonenum);
 
 	// set parameters and execute
 	$name = $_POST["name"];

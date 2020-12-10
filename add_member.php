@@ -7,7 +7,7 @@
 
 	Name: <input type="text" name="name" required><br>
 	E-mail: <input type="email" name="email" required><br>
-	Phone Number: <input type="tel" name="phone"><br>
+	Phone Number: <input type="text" name="phone"><br>
 	<input type="submit">
 
 	</form>

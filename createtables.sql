@@ -2,14 +2,12 @@ create table member
 (memberID	int 	auto_increment,
  name		varchar(20),
  email		varchar(30),
- phone_num	bigint,
- borrow_limit	int,
- curr_borrow	int,
+ phone_num	varchar(12),
  primary key (memberID)
 );
 
 create table book_info
-(ISBN		bigint,
+(ISBN		varchar(13),
  title		varchar(40),
  author		varchar(40),
  edition		int,
@@ -22,8 +20,8 @@ create table book_info
 
 create table book_copy
 (bookID		int 	auto_increment,
- ISBN		bigint,
- primary key (bookID, ISBN),
+ ISBN		varchar(13),
+ primary key (bookID),
  foreign key (ISBN) references book_info(ISBN)
  	on delete cascade
 );
@@ -31,10 +29,8 @@ create table book_copy
 create table borrows
 (memberID	int,
  bookID		int,
- ISBN 		bigint,
  borrow_date	date,
- primary key (memberID, bookID, ISBN),
+ primary key (memberID, bookID),
  foreign key (memberID) references member(memberID),
- foreign key (bookID) references book_copy(bookID),
- foreign key (ISBN) references book_copy(ISBN)
+ foreign key (bookID) references book_copy(bookID)
 );

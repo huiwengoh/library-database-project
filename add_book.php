@@ -5,7 +5,7 @@
 
     <form action="newbook.php" method="post">
 
-	ISBN: <input type="number" name="isbn" required><br>
+	ISBN: <input type="text" name="isbn" required><br>
 	<input type="submit">
 
 	</form>
