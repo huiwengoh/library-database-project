@@ -1,9 +1,13 @@
 <html>
+<head>
+        <link rel="stylesheet"  href="style.css"></link>
+    </head>
+
 <body>
     <h4>Lending a book</h4>
 
 	<form action="lend_book.php">
-    <input type="submit" value="Go back" />
+		<input type="submit" value="Go back" class="clickButton" />
     </form>
 
 
@@ -57,7 +61,7 @@
 		$stmt->bind_param("iss", $insert_memberid, $insert_bookID, $insert_date);
 		$stmt->execute();
 		$stmt->close();
-		echo "The book with ISBN: " . $isbn . " has been successfully lent by member: " . $insert_memberid . "<br>";
+		echo "The book with ISBN: " . $isbn . " has been successfully lent to member: " . $insert_memberid . "<br>";
 	}
 
 	$conn->close();
@@ -66,7 +70,7 @@
 
 
     <form action="index.php">
-    <input type="submit" value="Return Home" />
+		<input type="submit" value="Return Home" class="clickButton" />
     </form>
 
     

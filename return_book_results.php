@@ -1,9 +1,13 @@
 <html>
+<head>
+        <link rel="stylesheet"  href="style.css"></link>
+</head> 
+
 <body>
     <h4>Returning a book</h4>
 
 	<form action="return_book.php">
-    <input type="submit" value="Go back" />
+		<input type="submit" value="Go back" class="clickButton" />
     </form>
 
     <?php
@@ -42,7 +46,7 @@
 		$del = "DELETE FROM borrows WHERE memberID = '$memberid' AND bookID = '$bookid'";
 
 		if ($conn->query($del) === TRUE) {
-		  echo "Book succesfully returned";
+		  echo "Book succesfully returned to the library";
 		} else {
 		  echo $conn->error;
 		}
@@ -52,9 +56,9 @@
 	$conn->close();
 
 	?>
-
+	<br>
     <form action="index.php">
-    <input type="submit" value="Return Home" />
+		<input type="submit" value="Return Home" class="clickButton" />
     </form>
 
 </body>

@@ -1,19 +1,22 @@
 <html>
+	<head>
+        <link rel="stylesheet"  href="style.css"></link>
+    </head>
 <body>
 
     <h4>Add a New Member to the library</h4>
 
     <form action="newmember.php" method="post">
 
-	Name: <input type="text" name="name" required><br>
-	E-mail: <input type="email" name="email" required><br>
-	Phone Number: <input type="text" name="phone"><br>
-	<input type="submit">
+		<input type="text" name="name" placeholder="Name" required/><br>
+		<input type="email" name="email" placeholder ="E-mail" required /><br>
+		<input type="text" name="phone" placeholder="Phone Number" /><br><br>
+		<input type="submit" value="Submit" class="clickButton" />
 
 	</form>
 
 	<form action="index.php">
-    <input type="submit" value="Return Home" />
+		<input type="submit" value="Return Home" class="clickButton" />
     </form>
 	
 </body>

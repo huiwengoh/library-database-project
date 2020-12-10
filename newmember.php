@@ -1,6 +1,9 @@
 <html>
+	<head>
+        <link rel="stylesheet"  href="style.css"></link>
+    </head>
 <body>
-
+	<h4>Add a New Member to the library</h4>
 	<?php
 	$host = 'localhost';
 	$dbname = 'library-database';
@@ -39,7 +42,7 @@ $username = 'root';
 
 
     <form action="index.php">
-    <input type="submit" value="Return Home" />
+    <input type="submit" value="Return Home"  class="clickButton" />
     </form>
 </body>
 </html>

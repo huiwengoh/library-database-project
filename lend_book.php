@@ -1,4 +1,7 @@
 <html>
+    <head>
+        <link rel="stylesheet"  href="style.css">
+    </head>
 <body>
     <h4>Lending a book</h4>
 
@@ -16,7 +19,7 @@
 			<input type="text" placeholder="Enter valid member ID" class="inputBox" name = "memberid" required />
 			<br>
 			<br>
-	        <input type="submit" name="go" class="btnSearch" value="Submit">
+	        <input type="submit" name="go" value="Submit" class="clickButton" />
 	    </p>
 	</div>
     </form>
@@ -25,7 +28,7 @@
 
 
     <form action="index.php">
-    <input type="submit" value="Return Home" />
+		<input type="submit" value="Return Home" class="clickButton"/>
     </form>
 
     

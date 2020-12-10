@@ -1,6 +1,6 @@
 <html>
 <body>
-
+	<h4>Add a New Book to the Library</h4>
 	<?php
 	$host = "localhost";
 	$dbname = 'library-database';

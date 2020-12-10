@@ -1,6 +1,9 @@
 <html>
+	<head>
+        <link rel="stylesheet"  href="style.css"></link>
+    </head>
 <body>
-
+	<h4>Add a New Book to the Library</h4>
 	<?php
 	$host = 'localhost';
 	$dbname = 'library-database';
@@ -49,7 +52,7 @@
 		Publisher: <input type="text" name="publisher"><br>
 		Genre: <input type="text" name="genre"><br>
 		Pages: <input type="number" name="pages"><br>
-		<input type="submit">
+		<input type="submit" class="clickButton" />
 
 	<?php
 	}
@@ -57,8 +60,8 @@
 
 	?>
 
-<form action="index.php">
-    <input type="submit" value="Return Home" />
+	<form action="index.php">
+       <input type="submit" value="Return Home" class="clickButton" />
     </form>
 
 </body>

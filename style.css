@@ -1,0 +1,51 @@
+.clickButton {
+	border: #006BB0; /* Blueish */
+	color: black;
+	padding: 12px 20px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	border-radius: 4px;
+	transition-duration: 0.4s;
+}
+.clickButton:hover {
+	background-color: #006BB0;
+	color: white;
+}
+
+input[type=text] {
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+input[type=date] {
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+input[type=email] {
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+h3{
+	font-size: 28px;
+}
+
+h4{
+	font-size: 24px;
+}
+
+h5{
+	font-size: 20px;
+}
+
+table, th, td {
+	border: 1px solid black;
+	border-collapse: collapse;
+	padding: 5px 10px;
+}
