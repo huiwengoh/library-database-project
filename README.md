@@ -1,4 +1,4 @@
-# CS 3038 Project: Database for a Library 
+# CS 3083 Project: Database for a Library 
 ## Description
 
 This product is intended to keep track of books and members at a book library. It allows the user to lend a book to a member of the library, to return a book to the library, to add books and members, and to see all of the books and how many copies exist and are available, and to see all of the members and their borrowed books. 
