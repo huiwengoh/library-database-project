@@ -38,5 +38,6 @@ The user will start off on the index page and should navigate to the selected pa
 - To add a member into the database, the librarian will need their name, email, and phone number. 
 - To add a book into the library, the librarian will need the ISBN, title, author, edition, publishing year, publisher,and number of pages.
 
-
+## Contributors
+This project was developed by Hui Wen Goh and Jimena Gonzalez Cotera 
 
